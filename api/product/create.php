@@ -6,8 +6,8 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-require __DIR__ . '/../../Config/Database.php';
-require __DIR__ . '/../../Models/Product.php';
+require __DIR__ . '/../Config/Database.php';
+require __DIR__ . '/../Models/Product.php';
 
 $database = new Database();
 $db = $database->getConnection();
@@ -16,7 +16,8 @@ $product = new Product($db);
 
 $data = json_decode(file_get_contents("php://input"));
 
-if (!empty($data->name) &&
+if (
+    !empty($data->name) &&
     !empty($data->price) &&
     !empty($data->description) &&
     !empty($data->category_id)

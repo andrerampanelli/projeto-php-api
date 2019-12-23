@@ -2,8 +2,8 @@
 
 // namespace Api\controllers\product\read;
 
-require __DIR__ . '/../../Config/Database.php';
-require __DIR__ . '/../../Models/Product.php';
+require __DIR__ . '/../Config/Database.php';
+require __DIR__ . '/../Models/Product.php';
 
 // use Api\Config\Database;
 // use Api\Models\Product;

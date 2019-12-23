@@ -32,4 +32,19 @@ class Category
 
         return $stmt;
     }
+
+    public function read()
+    {
+        $query = "SELECT
+                id, name, description
+            FROM
+                " . $this->table_name . "
+            ORDER BY
+                name";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+
+        return $stmt;
+    }
 }
