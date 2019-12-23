@@ -1,0 +1,15 @@
+{
+    "name": "vendor/name",
+    "authors": [
+        {
+            "name": "André Vitor Rampanelli",
+            "email": "andre.rampanelli@outlook.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Api\\": "api/"
+        }
+    }
+}
