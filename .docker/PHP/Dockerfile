@@ -1,7 +1,7 @@
 FROM php:7.2.6-apache
 
 COPY . /var/www/html
-COPY .docker/vhost.conf /etc/apache2/sites-available/000-default.conf
+COPY .docker/PHP/vhost.conf /etc/apache2/sites-available/000-default.conf
 
 WORKDIR /var/www/html
 

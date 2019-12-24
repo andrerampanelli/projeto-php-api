@@ -5,7 +5,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: .docker/Dockerfile
+      dockerfile: .docker/PHP/Dockerfile
     ports:
       - 8000:80
     volumes:
@@ -14,7 +14,9 @@ services:
       - bancodedados
 
   bancodedados:
-    image: mariadb:latest
+    build: 
+      context: .
+      dockerfile: .docker/DB/Dockerfile
     ports:
       - 3306:3306
     environment:

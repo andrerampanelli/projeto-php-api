@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 require __DIR__ . '/../Config/Database.php';
-require __DIR__ . '/../Models/Product.php';
+require __DIR__ . '/../Models/Category.php';
 
 $database = new Database();
 $db = $database->getConnection();
