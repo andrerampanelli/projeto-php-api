@@ -1,7 +1,5 @@
 <?php
 
-namespace Api\Models;
-
 class User
 {
 
@@ -19,4 +17,25 @@ class User
     {
         $this->conn = $db;
     }
+
+    function auth($email)
+    {
+        $query = "SELECT
+                name, email, password 
+            FROM
+                " . $this->table_name . " 
+            WHERE 
+                email = '" . $email . "'";
+
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $this->name = $row['name'];
+        $this->email = $row['email'];
+        $this->password = $row['password'];
+    }
+
 }
