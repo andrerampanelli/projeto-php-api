@@ -1,4 +1,4 @@
-# prejetp_php_api
+# prejetp-php-api
 
 #### To run api
 > make setup
