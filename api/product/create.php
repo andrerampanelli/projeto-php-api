@@ -29,13 +29,13 @@ if (
     $product->created = date('Y-m-d H:i:s');
 
     if ($product->create()) {
-        http_response_code(201);
         echo json_encode(array("message" => "Product was created."));
+        http_response_code(201);
     } else {
-        http_response_code(503);
         echo json_encode(array("message" => "Unable to create product."));
+        http_response_code(503);
     }
 } else {
-    http_response_code(400);
     echo json_encode(array("message" => "Unable to create product. Data is incomplete."));
+    http_response_code(400);
 }
